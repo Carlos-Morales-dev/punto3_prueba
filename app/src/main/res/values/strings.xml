@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lista de Tareas</string>
+    <string name="perm_read_tareas_label">Leer tareas de la aplicación</string>
+    <string name="perm_read_tareas_desc">Permite a aplicaciones externas leer las tareas almacenadas en Room.</string>
+    <string name="perm_write_tareas_label">Modificar tareas de la aplicación</string>
+    <string name="perm_write_tareas_desc">Permite a aplicaciones externas insertar, modificar o eliminar tareas.</string>
+</resources>

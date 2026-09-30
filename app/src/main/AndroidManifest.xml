@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permisos personalizados para acceder al ContentProvider de Tareas (Punto 3) -->
+    <permission
+        android:name="com.example.tareas.READ_TAREAS"
+        android:protectionLevel="normal"
+        android:label="@string/perm_read_tareas_label"
+        android:description="@string/perm_read_tareas_desc" />
+
+    <permission
+        android:name="com.example.tareas.WRITE_TAREAS"
+        android:protectionLevel="normal"
+        android:label="@string/perm_write_tareas_label"
+        android:description="@string/perm_write_tareas_desc" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.App">
+
+        <!-- ContentProvider personalizado para compartir tareas con aplicaciones cliente (App B) -->
+        <provider
+            android:name="com.example.tareas.data.TareaContentProvider"
+            android:authorities="com.example.tareas.provider"
+            android:exported="true"
+            android:readPermission="com.example.tareas.READ_TAREAS"
+            android:writePermission="com.example.tareas.WRITE_TAREAS" />
+
+        <activity
+            android:name="com.example.tareas.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
